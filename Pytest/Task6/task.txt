@@ -1,0 +1,5 @@
+Utworzyć dwa pliki: solution.py, test_sol.py
+Wymagania plików:
+solution.py - plik ma zawierać funkcję sprawdzającą czy zadana liczba jest pierwsza
+test_sol.py - plik ma zawierać testy do funkcji zawartej w solution.py, zastanowić się
+              nad sposobem generowania testów oraz sposobu grupowania ich w klasy.

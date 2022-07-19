@@ -1,0 +1,5 @@
+Utworzyć dwa pliki, jeden z rozwiązaniem, drugi z testami
+Wymagania plików:
+Pierwszy zawiera funkcję, która dostaje liczbę "n" i wyznaczą najmniejszą liczbę pierwszą większą od "n".
+Drugi zawiera testy sprawdzającymi czy rzeczywiście podana liczba jest najmniejszą liczbą większą od "n",
+zastanowić się nad sposobem generowania testów oraz sposobu grupowania ich w klasy

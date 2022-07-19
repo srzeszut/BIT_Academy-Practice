@@ -1,0 +1,5 @@
+Utworzyć dwa pliki, jeden z rozwiązaniem, drugi z testami
+Wymagania plików:
+Pierwszy zawiera funkcję sortującą linked-list
+Drugi zawiera testy sprawdzającymi czy zadana linked-list'a jest posortowana,
+zastanowić się nad sposobem generowania testów oraz sposobu grupowania ich w klasy
