@@ -19,5 +19,5 @@ public:
 int main()
 {
     node A(1, 2, 3);
-    std::cout << A.z;
+    std::cout << A.x;
 }
