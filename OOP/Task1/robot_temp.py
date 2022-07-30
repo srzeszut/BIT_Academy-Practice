@@ -19,15 +19,6 @@ class robot:
     def down(self, val = 1):
         pass
 
-    def set_status(self, stat):
-        pass
-    def set_battery(self, val):
-        pass
-    def set_x(self, val):
-        pass
-    def set_y(self, val):
-        pass
-
     def get_status(self):
         pass
     def get_battery(self):
