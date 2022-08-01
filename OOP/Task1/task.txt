@@ -1,0 +1,75 @@
+Zadanie polega na napisaniu pól, metod i konstruktora klasy "robot", które pozwolą na sprawną obsługę robota wg poniższych zaleceń:
+
+Konstruktor:
+    __init__(self, T, x, y, b)
+    Inicjalizowanie robota wymaga czterech argumentów:
+    1.     Mapy
+    2 i 3  Współrzednych x i y 
+    4.     Liczby punktów energii na start
+    Należy samemu dopisać pola klasy (pola powinny być prywatne!!!) oraz inne czynności przy inicjalizacji robota
+
+Lista metod:
+    left(self, val = 1)
+    right(self, val = 1)
+    up(self, val = 1)
+    down(self, val = 1)
+
+    Powyższe 4 metody służą do poruszania się robota po mapie. Metoda może przyjmować argument będący liczbą całkowitą
+    (nie ma konieczności sprawdzania typu argumentu). 
+    Jeżeli argument będzie ujemny, to robot nie wykonuje żadnej akcji.
+    Jeżeli argumentu nie ma, robot zużywa 1 punkt energii, a następnie wykonuje ruch o 1 pole w odpowiednim kierunku
+    Jeżeli argument jest dodatni i wynosi "x", to robot wykonuje "x" zużycie 1 punktu energii, a następnie wykonanie ruchu
+    o 1 pole w odpowiednim kierunku.
+
+    def get_status(self)   - Metoda służąca do zwrócenia statusu robota
+    def get_battery(self)  - Metoda służąca do zwrócenia liczby pozostałych punktów energii robota
+    def get_map(self)      - Metoda służąca do zwracania mapy z uwzględnieniem robota
+    def get_x(self)        - Metoda służąca do zwracania współrzędnej x robota
+    def get_y(self)        - Metoda służąca do zwracania współrzędnej y robota
+
+Przykład:
+robot_t = robot(
+M = [["T", "T", "T", "T"],
+     ["T", "B", "W", "G"],
+     ["T", "T", "W", "G"],
+     ["T", "W", "W", "G"]]
+x, y = 0, 0
+b = 3)
+
+Wejście:
+0.  robot(M, x, y, b)
+1.  robot_t.down().right()
+2.  robot_t.get_battery()
+3.  robot_t.left()
+4.  robot_t.get_x()
+5.  robot_t.get_y()
+6.  robot_t.up()
+7.  robot_t.get_status()
+8.  robot_t.right(3)
+9.  robot_t.get_map()
+10. robot_t.left().down()
+11. robot_t.get_status()
+
+Wyjście:
+Druga linia powinna zwrócić liczbę: 11
+Czwarta linia powinna zwrócić liczbę: 1
+Piąta linia powinna zwrócić liczbę: 0
+Siódma linia powinna zwrócić status: robotStatus.ALIVE
+Dziewiąta linia powinna zwrócić mapę:
+[["T", "T", "T", "R"],
+ ["T", "T", "W", "G"],
+ ["T", "T", "W", "G"],
+ ["T", "W", "W", "G"]];
+Jedenasta linia powinna zwrócić status: robotStatus.WATER
+
+Szczególne przypadki:
+    * Jeżeli robot chce wyjść z mapy lub chce wejść w górę, to nie zmienia położenia i rozbija się
+    * Jeżeli robot wejdzie do wody to zmienia stan i dalej nie zmienia już położenia
+    * Jeżeli robot zbierze baterię to bateria znika z mapy
+    * Jeżeli robot nie ma już punktów energii, to zmienia swój stan i nie zmienia już położenia
+    * Metoda get_map() zwraca mapę uwzględniając zebrane baterie oraz położenie robota, tzn.
+      jeżeli status robota to robotStatus.ALIVE to jego miejsce jest zastąpione "R", w każdym
+      innym przypadku "X"
+    * Po rozbiciu się lub utopieniu jakakolwiek próba ruchu nie zużywa energii
+    * Metody left, right, up, down mogą przyjąć liczbę całkowitą ujemną, ale nie wykona się wtedy
+      żadna czynność.
